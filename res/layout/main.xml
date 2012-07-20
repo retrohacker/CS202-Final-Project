@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+@author William Blankenship
+@email william.jblankenship(at)gmail.com
+@date 11/18/2011
+ -->
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView 
+        android:id="@+id/Greeting"
+        android:text="@string/Greeting" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="@+dimen/greetingFontSize"
+        android:padding="@+dimen/spacing" />
+    <TextView
+        android:id="@+id/weight"
+        android:text="@string/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Greeting"
+        android:textSize="@+dimen/fontSize"
+        android:padding="@+dimen/spacing" />    
+    <EditText 
+        android:id="@+id/weightInput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@+dimen/spacing"
+        android:layout_marginBottom="@+dimen/spacing"
+        android:layout_marginRight="@+dimen/spacing"
+        android:layout_toRightOf="@+id/weight"
+        android:layout_below="@+id/Greeting"
+        android:inputType="phone"
+        android:digits="1234567890" />
+    <TextView 
+        android:id="@+id/age"
+        android:text="@string/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weight"
+        android:textSize="@+dimen/fontSize"
+        android:padding="@+dimen/spacing" />
+    <EditText 
+        android:id="@+id/ageInput"
+        android:hint="@string/ageInput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@+dimen/spacing"
+        android:layout_marginRight="@+dimen/spacing"
+        android:layout_marginBottom="@+dimen/spacing"
+        android:layout_below="@+id/weight"
+        android:layout_toRightOf="@+id/weight"
+        android:inputType="phone"
+        android:digits="1234567890" />
+    <TextView 
+        android:id="@+id/height"
+        android:text="@string/height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/age"
+        android:textSize="@+dimen/fontSize"
+        android:padding="@+dimen/spacing" />
+    <EditText
+        android:id="@+id/feet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@+dimen/spacing"
+        android:layout_marginBottom="@+dimen/spacing"
+        android:layout_below="@+id/age"
+        android:layout_toRightOf="@+id/weight"
+        android:inputType="phone"
+        android:nextFocusDown="@+id/inches"
+        android:nextFocusLeft="@+id/age"
+        android:nextFocusRight="@+id/inches"
+        android:digits="1234567890" />
+    <EditText
+        android:id="@+id/inches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@+dimen/spacing"
+        android:layout_marginBottom="@+dimen/spacing"
+        android:layout_marginRight="@+dimen/spacing"
+        android:layout_below="@+id/age"
+        android:layout_toRightOf="@+id/feet"
+        android:layout_marginLeft="@+dimen/spacing"
+        android:inputType="phone"
+        android:nextFocusUp="@+id/feet"
+        android:nextFocusDown="@+id/male"
+        android:digits="1234567890" />
+    <RadioGroup
+        android:id="@+id/gender"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/height"
+        android:paddingTop="@+dimen/spacing"
+        android:checkedButton="@+id/male">
+        <RadioButton 
+            android:id="@+id/male"
+            android:text="@string/male"
+            android:textSize="@+dimen/fontSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@+dimen/spacing"
+            android:nextFocusUp="@+id/inches"
+            android:nextFocusDown="@+id/female" />
+        <RadioButton
+            android:id="@+id/female"
+            android:text="@string/female"
+            android:textSize="@+dimen/fontSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:nextFocusUp="@+id/male"
+            android:nextFocusDown="@+id/us"
+            android:layout_marginLeft="@+dimen/spacing" />
+	</RadioGroup>
+	<RadioGroup
+	    android:id="@+id/units"
+	    android:orientation="horizontal"
+	    android:layout_centerHorizontal="true"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/gender"
+	    android:checkedButton="@+id/us" >
+	    <RadioButton
+	        android:id="@+id/us"
+	        android:text="@string/us"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="@dimen/fontSize"
+	        android:layout_marginRight="@dimen/spacing"
+	        android:onClick="toUS"
+	        android:nextFocusUp="@id/female"
+	        android:nextFocusDown="@+id/metric" />
+	    <RadioButton
+	        android:id="@+id/metric"
+	        android:text="@string/metric"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="@dimen/fontSize"
+	        android:layout_marginLeft="@dimen/spacing"
+	        android:onClick="toMetric"
+	        android:nextFocusUp="@id/us"
+	        android:nextFocusDown="@+id/button1" />
+	    </RadioGroup>
+	
+	<Button 
+	    android:id="@+id/button1"
+	    android:text="@string/button"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/units"
+	    android:layout_marginTop="@dimen/spacing"
+	    android:textSize="@+dimen/buttonFontSize"
+	    android:onClick="showResult"
+	    android:layout_centerHorizontal="true" />
+</RelativeLayout>
+</ScrollView>

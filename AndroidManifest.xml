@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+@author William Blankenship
+@email william.jblankenship(at)gmail.com
+@date 11/12/11
+ -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.awesomesauce.bmr"
+    android:versionCode="1"
+    android:versionName="sunshine" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <application
+        android:icon="@drawable/healthicon"
+        android:label="@string/app_name" >
+        <activity
+            android:label="@string/app_name"
+            android:name=".InputActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.awesomesauce.bmr.start_app" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ResultActivity">
+            
+        </activity>
+    </application>
+
+</manifest>

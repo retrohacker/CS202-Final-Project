@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+@author William Blankenship
+@email william.jblankenship(at)gmail.com
+@date 11/12/2011
+ -->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+		
+	    <TextView
+	        android:id="@+id/resultGreeting"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/resultGreeting"
+	        android:textSize="14pt"
+	        android:padding="@+dimen/spacing"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true" />
+	    <TableLayout
+	        android:id="@+id/resultTable"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" 
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@+id/resultGreeting">
+	        <TableRow>
+	            <TextView
+	                android:id="@+id/bmiMessage"
+	                android:text="@string/bmiMessage"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:textSize="@+dimen/fontSize"
+	                android:padding="@+dimen/resultSpacing" />
+	            <TextView 
+			        android:id="@+id/bmi"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textSize="@+dimen/fontSize"
+			        android:padding="@+dimen/resultSpacing" />
+	        </TableRow>
+	        <TableRow>
+	            <TextView
+	                android:id="@+id/bmrMessage"
+	                android:text="@string/bmrMessage"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:textSize="@+dimen/fontSize"
+	                android:padding="@+dimen/resultSpacing" />
+	            <TextView 
+			        android:id="@+id/bmr"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textSize="@+dimen/fontSize"
+			        android:padding="@+dimen/resultSpacing" />
+	        </TableRow>
+	    </TableLayout>
+	    <TextView
+	        android:id="@+id/weightClass"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="@+dimen/fontSize"
+	        android:padding="@+dimen/resultSpacing"
+	        android:layout_below="@+id/resultTable"
+	        android:layout_centerHorizontal="true" />
+	    <TextView
+	        android:id="@+id/weightAnalasys"
+	        android:layout_below="@+id/weightClass"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" />
+	    <Button 
+	        android:id="@+id/goBack"
+	        android:text="@string/goBack"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="@+dimen/fontSize"
+	        android:layout_margin="@+dimen/resultSpacing"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@+id/weightAnalasys"
+	        android:onClick="exitResults" />
+	</RelativeLayout>
+</ScrollView>

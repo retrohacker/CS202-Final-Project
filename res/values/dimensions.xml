@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+@author William Blankenship
+@email william.jblankenship(at)gmail.com
+@date 11/12/11
+ -->
+ 
+<resources>
+	
+    <dimen name="fontSize">12pt</dimen>
+    <dimen name="greetingFontSize">14pt</dimen>
+    <dimen name="buttonFontSize">10pt</dimen>
+    <dimen name="spacing">18dp</dimen>
+    <dimen name="resultSpacing">10dp</dimen>
+    
+    
+</resources>
